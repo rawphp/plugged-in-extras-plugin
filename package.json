@@ -1,0 +1,74 @@
+{
+  "name": "plugged-in-extra-plugin",
+  "version": "0.0.1",
+  "description": "Provides extra functionality for the `plugged-in` package.",
+  "main": "build/index.js",
+  "author": "Tom Kaczocha <tom.kaczocha@temando.com>",
+  "license": "MIT",
+  "plugged-in": {
+    "context": "plugged-in",
+    "provides": {
+      "error": "handleError"
+    }
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.9.1",
+    "bluebird": "^3.4.1",
+    "moment": "^2.15.0",
+    "source-map-support": "^0.4.5",
+    "color-logger": "0.0.6"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.9.0",
+    "babel-core": "^6.6.0",
+    "babel-eslint": "^6.0.4",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-transform-async-to-generator": "^6.8.0",
+    "babel-plugin-transform-builtin-extend": "^1.1.0",
+    "babel-preset-es2015-node4": "latest",
+    "babel-preset-stage-3": "^6.13.0",
+    "chai": "^3.5.0",
+    "chai-match": "^1.1.1",
+    "copy-webpack-plugin": "^3.0.1",
+    "dirty-chai": "^1.2.2",
+    "esdoc": "^0.4.8",
+    "esdoc-es7-plugin": "0.0.2",
+    "eslint": "^2.13.1",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.8.1",
+    "eslint-plugin-jsx-a11y": "^1.3.0",
+    "eslint-plugin-react": "^5.1.1",
+    "eslint-plugin-require-jsdoc": "^1.0.4",
+    "isparta": "^4.0.0",
+    "istanbul": "^1.0.0-alpha",
+    "json-loader": "^0.5.4",
+    "mocha": "^2.5.3",
+    "nock": "^8.0.0",
+    "npm-watch": "^0.1.6",
+    "sinon": "^1.17.4",
+    "webpack": "^1.13.1"
+  },
+  "watch": {
+    "build": {
+      "patterns": [
+        "."
+      ],
+      "extensions": [
+        "js",
+        "json"
+      ],
+      "ignore": "build/"
+    }
+  },
+  "scripts": {
+    "lint": "npm run clean && eslint .",
+    "test": "env TZ='UTC' NODE_ENV=test mocha tests --compilers js:babel-core/register --require babel-polyfill --recursive",
+    "coverage": "env TZ='UTC' babel-node ./node_modules/.bin/isparta cover  --report text _mocha -- --compilers js:babel-core/register --recursive",
+    "slate": "rm -rf node_modules/ && npm install",
+    "watch": "npm-watch",
+    "clean": "rm -rf build",
+    "build": "npm run clean && $(npm bin)/babel ./src/ --ignore node_modules --out-dir build && npm run install-local",
+    "install-local": "npm i -g . --save",
+    "build-docs": "./node_modules/.bin/esdoc -c esdoc.json"
+  }
+}
