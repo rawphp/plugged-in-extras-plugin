@@ -1,5 +1,5 @@
 {
-  "name": "plugged-in-extra-plugin",
+  "name": "plugged-in-extras-plugin",
   "version": "0.0.1",
   "description": "Provides extra functionality for the `plugged-in` package.",
   "main": "build/index.js",
