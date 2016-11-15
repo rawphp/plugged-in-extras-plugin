@@ -8,7 +8,12 @@
   "plugged-in": {
     "context": "plugged-in",
     "provides": {
-      "error": "handleError"
+      "error": "handleError",
+      "postInit": [
+        "setDefaultMaxHandlers",
+        "setInitialisedAt"
+      ],
+      "exit": "cleanUp"
     }
   },
   "dependencies": {
