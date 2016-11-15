@@ -48,6 +48,12 @@
     "sinon": "^1.17.4",
     "webpack": "^1.13.1"
   },
+  "files": [
+    "build/",
+    "resources/",
+    "README.md",
+    "CHANGELONG.md"
+  ],
   "watch": {
     "build": {
       "patterns": [
