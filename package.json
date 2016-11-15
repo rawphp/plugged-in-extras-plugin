@@ -5,6 +5,8 @@
   "main": "build/index.js",
   "author": "Tom Kaczocha <tom.kaczocha@temando.com>",
   "license": "MIT",
+  "repository": "https://github.com/rawphp/plugged-in-extras-plugin",
+  "bugs": "https://github.com/rawphp/plugged-in-extras-plugin/issues",
   "plugged-in": {
     "context": "plugged-in",
     "provides": {

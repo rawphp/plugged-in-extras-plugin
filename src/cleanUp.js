@@ -8,7 +8,8 @@
 export default function cleanUp(event) {
   const manager = event.data;
 
-  if (manager) {
+  // manager.eventNames() is only supported on Node >= 7.0.0
+  if (manager && manager.eventNames) {
     const events = manager.eventNames();
 
     events.forEach((name) => {
