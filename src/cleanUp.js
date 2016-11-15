@@ -8,7 +8,7 @@
 export default function cleanUp(event) {
   const manager = event.data;
 
-  if (manager && manager.listenerCount > 0) {
+  if (manager) {
     const events = manager.eventNames();
 
     events.forEach((name) => {
