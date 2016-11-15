@@ -67,8 +67,7 @@
     "slate": "rm -rf node_modules/ && npm install",
     "watch": "npm-watch",
     "clean": "rm -rf build",
-    "build": "npm run clean && $(npm bin)/babel ./src/ --ignore node_modules --out-dir build && npm run install-local",
-    "install-local": "npm i -g . --save",
+    "build": "npm run clean && $(npm bin)/babel ./src/ --ignore node_modules --out-dir build",
     "build-docs": "./node_modules/.bin/esdoc -c esdoc.json"
   }
 }
