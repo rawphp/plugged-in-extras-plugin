@@ -8,6 +8,8 @@ import log from 'color-logger';
  * @returns {undefined}
  */
 export default function handleError(error) {
+  log.debug = true;
+
   log.i('plugged-in-extra-plugin.handleError');
 
   log.e(error.message);

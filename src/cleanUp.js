@@ -9,10 +9,10 @@ export default function cleanUp(event) {
   const manager = event.data;
 
   // manager.eventNames() is only supported on Node >= 7.0.0
-  if (manager && manager.eventNames) {
-    const events = manager.eventNames();
+  if (manager) {
+    const handlers = Object.keys(manager._events);
 
-    events.forEach((name) => {
+    handlers.forEach((name) => {
       manager.removeAllListeners(name);
     });
   }
