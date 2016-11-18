@@ -1,6 +1,6 @@
 {
   "name": "plugged-in-extras-plugin",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Provides extra functionality for the `plugged-in` package.",
   "main": "build/index.js",
   "author": "Tom Kaczocha <tom.kaczocha@temando.com>",
