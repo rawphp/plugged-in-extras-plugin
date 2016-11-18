@@ -6,14 +6,14 @@ chai.use(require('dirty-chai'));
 describe('setDefaultMaxHandlers', () => {
   it('set max handlers', () => {
     const event = {
-      data: {
+      context: {
         getMaxListeners: () => null,
-        setMaxListeners: (val) => (event.data._maxListeners = val),
+        setMaxListeners: (val) => (event.context._maxListeners = val),
       },
     };
 
-    expect(typeof event.data._maxListeners).to.equal('undefined');
+    expect(typeof event.context._maxListeners).to.equal('undefined');
     setDefaultMaxHandlers(event);
-    expect(event.data._maxListeners).to.equal(100);
+    expect(event.context._maxListeners).to.equal(100);
   });
 });

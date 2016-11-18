@@ -6,14 +6,14 @@ chai.use(require('dirty-chai'));
 describe('cleanUp', () => {
   it('remove all event handlers', () => {
     const event = {
-      data: {
+      context: {
         _events: ['init', 'run'],
-        removeAllListeners: () => (event.data._events = []),
+        removeAllListeners: () => (event.context._events = []),
       },
     };
 
-    expect(event.data._events.length).to.equal(2);
+    expect(event.context._events.length).to.equal(2);
     cleanUp(event);
-    expect(event.data._events.length).to.equal(0);
+    expect(event.context._events.length).to.equal(0);
   });
 });

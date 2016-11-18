@@ -6,7 +6,7 @@ chai.use(require('dirty-chai'));
 describe('handleError', () => {
   it('run error event handler', () => {
     const event = {
-      data: {},
+      context: {},
     };
 
     handleError(event);

@@ -6,11 +6,11 @@ chai.use(require('dirty-chai'));
 describe('setInitialisedAt', () => {
   it('set initialised date on the manager', () => {
     const event = {
-      data: {},
+      context: {},
     };
 
-    expect(typeof event.data.initialisedAt).to.equal('undefined');
+    expect(typeof event.context.initialisedAt).to.equal('undefined');
     setInitialisedAt(event);
-    expect(typeof event.data.initialisedAt).to.not.equal('undefined');
+    expect(typeof event.context.initialisedAt).to.not.equal('undefined');
   });
 });
