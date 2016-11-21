@@ -7,13 +7,13 @@ describe('setDefaultMaxHandlers', () => {
   it('set max handlers', () => {
     const event = {
       context: {
-        getMaxListeners: () => null,
-        setMaxListeners: (val) => (event.context._maxListeners = val),
+        getMaxHandlers: () => null,
+        setMaxHandlers: (val) => (event.context._defaultMaxHandlers = val),
       },
     };
 
-    expect(typeof event.context._maxListeners).to.equal('undefined');
+    expect(typeof event.context._defaultMaxHandlers).to.equal('undefined');
     setDefaultMaxHandlers(event);
-    expect(event.context._maxListeners).to.equal(100);
+    expect(event.context._defaultMaxHandlers).to.equal(100);
   });
 });

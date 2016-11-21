@@ -8,7 +8,7 @@ describe('cleanUp', () => {
     const event = {
       context: {
         _events: ['init', 'run'],
-        removeAllListeners: () => (event.context._events = []),
+        removeAllHandlers: () => (event.context._events = []),
       },
     };
 
