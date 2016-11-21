@@ -10,7 +10,7 @@
 export default function setDefaultMaxHandlers(event) {
   const manager = event.context;
 
-  if (manager && manager.getMaxListeners) {
-    manager.setMaxListeners(100);
+  if (manager && manager.getMaxHandlers) {
+    manager.setMaxHandlers(100);
   }
 }

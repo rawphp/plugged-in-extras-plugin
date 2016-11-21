@@ -15,7 +15,7 @@ export default function cleanUp(event) {
     const handlers = Object.keys(manager._events);
 
     handlers.forEach((name) => {
-      manager.removeAllListeners(name);
+      manager.removeAllHandlers(name);
     });
   }
 }
